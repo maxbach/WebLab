@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Page</servlet-name>
+        <servlet-class>MoviePageServlet</servlet-class>
+        <init-param>
+            <param-name>firstPage</param-name>
+            <param-value>1</param-value>
+            <!--1 - Main info-->
+            <!--2 - More info-->
+            <!--3 - Reviews-->
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Page</servlet-name>
+        <url-pattern>/page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>HomePageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Cart</servlet-name>
+        <servlet-class>CartPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,72 @@
+#body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+}
+
+#right {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-user-select: none;
+}
+
+#film_poster {
+    height: auto;
+    width: 150px;
+}
+
+#film_poster:hover {
+    cursor: pointer;
+}
+
+.minus, .plus, .counter{
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin: 8px
+}
+
+.red_btn:hover, .minus:hover, .plus:hover{
+    cursor: pointer;
+}
+
+.minus, .plus, .counter {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #dcd9d3;
+}
+
+.plus {
+    margin-right: 8px;
+}
+
+.minus:hover {
+    background: #d0723b;
+    color: white;
+}
+
+.plus:hover {
+    background: #89c14f;
+    color: white;
+}
+
+#film-short {
+    font-size: 20px;
+}

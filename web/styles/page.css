@@ -1,0 +1,54 @@
+#body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+#right {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#film_poster {
+    height: 768px;
+    width: auto;
+}
+
+#film-long-title, #film-review-title, #film-short-title {
+    background: #add8e6;
+}
+
+#film-long-title:hover, #film-review-title:hover, #film-short-title:hover {
+    cursor: pointer;
+}
+
+#film-long-title, #film-review-title, #film-short-title, #buy-btn {
+    font-size: 16px;
+    height: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    line-height: 32px;
+    text-align: center;
+    margin: 8px
+}
+
+#buy-btn:hover {
+    background: #d74938;
+    cursor: pointer;
+}
+
+#film-short, #film-long, #film-review {
+    white-space: pre-line;
+    font-size: 20px;
+}
+
+#buy-btn {
+    margin-left: 0;
+    background: #ff5956;
+    color: white;
+}

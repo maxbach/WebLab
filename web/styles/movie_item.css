@@ -1,0 +1,93 @@
+#body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+}
+
+#right {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.buttons {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-user-select: none;
+}
+
+#film_poster {
+    height: auto;
+    width: 150px;
+}
+
+#film_poster:hover {
+    cursor: pointer;
+}
+
+.red_btn, .minus, .plus, .counter, .cancel {
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin: 8px
+}
+
+.red_btn:hover, .minus:hover, .plus:hover, .cancel:hover {
+    cursor: pointer;
+}
+
+.minus, .plus, .counter, .cancel {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #dcd9d3;
+}
+
+#film-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.red_btn {
+    background: #ff5956;
+    color: white;
+    margin-left: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.plus {
+    margin-right: 8px;
+}
+
+.red_btn:hover {
+    background: #d74938;
+}
+
+.cancel:hover {
+    background: #bebbb5;
+}
+
+.minus:hover {
+    background: #d0723b;
+    color: white;
+}
+
+.plus:hover {
+    background: #89c14f;
+    color: white;
+}
+
+#film-short {
+    font-size: 20px;
+}
