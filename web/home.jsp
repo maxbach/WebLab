@@ -3,6 +3,7 @@
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="Entities.Genre" %>
 <%@ page import="java.util.Objects" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <%
@@ -57,6 +58,7 @@
     }
 %>
 <hr/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/home.js"></script>
 </body>
 </html>

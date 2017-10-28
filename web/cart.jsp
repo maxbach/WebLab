@@ -12,7 +12,7 @@
     <title><fmt:message key="cinema_name"/></title>
 </head>
 
-<body onload="changeSum()">
+<body onload="onLoad()">
 <jsp:include page="header.jsp"/>
 <c:forEach items="${sessionScope.cart.entrySet()}" var="pair">
     <c:set var="lang" value="${utils:getLanguageCookie(pageContext.request, pageContext.response)}"/>
@@ -22,11 +22,13 @@
 
         <div id="right">
             <h2 id="film-title" onclick='openMoviePage(${pair.getKey()})'>${movie.name}</h2>
-            <div class="buttons" id="buy_buttons${pair.getKey()}">
+            <div class="choose_buttons" id="buy_buttons${pair.getKey()}">
 
                 <div class="minus" onclick="dec(${pair.getKey()})">-</div>
                 <div class="counter" id="number${pair.getKey()}">${pair.getValue()}</div>
                 <div class="plus" onclick="inc(${pair.getKey()})">+</div>
+
+                <div class="red_btn" onclick="deleteMovie(${pair.getKey()})"><fmt:message key="delete"/></div>
 
             </div>
             <div id="film-short"> ${movie.description} </div>
@@ -38,26 +40,12 @@
     <fmt:message key="sum"/>
     <div id="sum"></div>
 </div>
+
+<div id="numberOfTickets" style="display: none">${sessionScope.numberOfTickets}</div>
+<div id="ticketPrice" style="display: none">${sessionScope.ticketPrice}</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/cart.js">
-    function dec(id) {
-        var inputId = 'number'.concat(id);
-        var input = document.getElementById(inputId).innerHTML;
-        var count = parseInt(input) - 1;
-        count = count < 1 ? 1 : count;
-        document.getElementById(inputId).innerHTML = count.toString();
-        changeSum()
-    }
-
-    function inc(id) {
-        var inputId = 'number'.concat(id);
-        var input = document.getElementById(inputId).innerText;
-        document.getElementById(inputId).innerHTML = (parseInt(input) + 1).toString();
-        changeSum()
-    }
-
-    function changeSum() {
-        document.getElementById("sum").innerHTML = "${utils:getCartSum(pageContext.session)}$"
-    }
 
 </script>
 </body>

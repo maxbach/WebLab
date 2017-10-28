@@ -33,4 +33,8 @@ function inc(id) {
 }
 
 function openCart(id) {
+    var numberOfTickets = [$("#number".concat(id)).text()];
+    var stringId = [id.toString()];
+    $.post("/cart", {movieId: stringId, tickets: numberOfTickets});
+    location.href = "/cart"
 }

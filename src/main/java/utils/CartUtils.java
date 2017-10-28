@@ -8,12 +8,17 @@ public class CartUtils {
 
     private static final Long ONE_TICKET = 5L;
 
-    public static Long getCountSum(HttpSession session) {
+    public static int getCountSum(HttpSession session) {
         int count = 0;
         for (Map.Entry<Long, Integer> o : getCart(session).entrySet()) {
             count += o.getValue();
         }
-        return count * ONE_TICKET;
+        return count;
+    }
+
+    public static void addToSessionTicketPriceAndNumber(HttpSession session) {
+        session.setAttribute("numberOfTickets", String.valueOf(getCountSum(session)));
+        session.setAttribute("ticketPrice", String.valueOf(ONE_TICKET));
     }
 
     public static Map<Long, Integer> getCart(HttpSession session) {
@@ -33,5 +38,15 @@ public class CartUtils {
             if (a + b > 0) return a + b;
             else return 1;
         });
+    }
+
+    public static void deleteMovie(HttpSession session, Long filmId) {
+        getCart(session).remove(filmId);
+    }
+
+    public static void updateValues(HttpSession session, String[] movieIds, String[] values) {
+        for (int i = 0; i < movieIds.length; i++) {
+            addTicketsToCart(session, Long.parseLong(movieIds[i]), Integer.parseInt(values[i]));
+        }
     }
 }

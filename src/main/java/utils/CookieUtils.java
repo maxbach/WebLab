@@ -19,22 +19,22 @@ public class CookieUtils {
     }
 
     public static String getLanguageCookie(HttpServletRequest req, HttpServletResponse resp) {
-        for (Cookie cookie : req.getCookies()) {
-            if (cookie.getName().equals("lang")) {
-                return cookie.getValue();
-            }
-        }
-        resp.addCookie(new Cookie("lang", "en"));
-        return "en";
+        return getCookie(req, resp, "lang", "en");
     }
 
     public static String getGenreCookie(HttpServletRequest req, HttpServletResponse resp) {
-        for (Cookie cookie : req.getCookies()) {
-            if (cookie.getName().equals("genre")) {
-                return cookie.getValue();
+        return getCookie(req, resp, "genre", "0");
+    }
+
+    private static String getCookie(HttpServletRequest req, HttpServletResponse resp, String id, String defaultValue) {
+        if (req.getCookies() != null) {
+            for (Cookie cookie : req.getCookies()) {
+                if (cookie.getName().equals(id)) {
+                    return cookie.getValue();
+                }
             }
         }
-        resp.addCookie(new Cookie("genre", "0"));
-        return "0";
+        resp.addCookie(new Cookie(id, defaultValue));
+        return defaultValue;
     }
 }

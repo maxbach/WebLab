@@ -16,7 +16,7 @@
     align-items: flex-start;
 }
 
-.buttons {
+.choose_buttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

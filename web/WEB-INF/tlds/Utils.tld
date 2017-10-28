@@ -32,7 +32,7 @@
     <function>
         <name>getMovie</name>
         <function-class>utils.HibernateUtils</function-class>
-        <function-signature>Entities.Movie getMovie(long)</function-signature>
+        <function-signature>Entities.Movie getMovie(java.lang.String)</function-signature>
     </function>
     <function>
         <name>getGenres</name>

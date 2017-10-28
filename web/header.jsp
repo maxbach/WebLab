@@ -14,10 +14,10 @@
 <fmt:setBundle basename="strings"/>
 <div id="header">
 
-    <div id="buttons">
+    <div id="open_buttons">
         <div id="home" onclick="location.href='home'"><img src="images/header_home.png"></div>
         <div id="login"><img src="images/header_login.png"></div>
-        <div id="cart"><img src="images/header_cart.png"></div>
+        <div id="cart" onclick="location.href='cart'"><img src="images/header_cart.png"></div>
     </div>
 
     <h1 id="title"><fmt:message key="cinema_name"/> </h1>

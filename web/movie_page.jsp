@@ -1,26 +1,27 @@
-<%@ page import="java.util.Locale" %>
-<%@ page import="java.util.ResourceBundle" %>
+<%@ page import="utils.CookieUtils" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="utils" uri="http://mycompany.com" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<% String locale = CookieUtils.getLocale(request, response);%>
+
+<fmt:setLocale value='<%=locale%>'/>
+<fmt:setBundle basename="strings"/>
 
 <html>
-
-<%
-    String lang = (String) request.getAttribute("lang");
-    ResourceBundle bundle = ResourceBundle.getBundle("strings",
-            new Locale.Builder().setLanguage(lang).build());%>
 
 <jsp:useBean id="movie" class="Entities.MovieLanguage" scope="request">
     <jsp:setProperty name="movie" property="*"/>
 </jsp:useBean>
-
+<c:set var="id" value='<%=request.getParameter("id")%>'/>
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="styles/page.css">
-    <title><%=bundle.getString("cinema_name")%>
+    <title><fmt:message key="cinema_name"/>
     </title>
 </head>
-<body onload='<%=request.getAttribute("initMethod").toString()%>'>
+<body onload='<%=request.getAttribute("initMethod").toString()%>; close_chooser()'>
 
 <jsp:include page="header.jsp"/>
 
@@ -30,17 +31,20 @@
     <div id="right">
         <h2 id="film-title">${movie.name}</h2>
 
-        <div id="buttons">
-            <div id="buy-btn" onclick="location.href='/cart';
-                ${utils:addTicketsToCart(pageContext.session, requestScope.id, 1)}">
-                <%=(String) bundle.getString("buy_title_btn")%>
-            </div>
-            <div id="film-short-title" onClick="showMain()"><%=(String) bundle.getString("main_info_btn")%>
-            </div>
-            <div id="film-long-title" onClick="showLong()"><%=(String) bundle.getString("long_info_btn")%>
-            </div>
-            <div id="film-review-title" onClick="showReview()"><%=(String) bundle.getString("review_btn")%>
-            </div>
+        <div class="red_btn" id="buy" onclick="open_chooser()"><fmt:message key="buy_title_btn"/></div>
+        <div class="buy_buttons">
+            <div class="minus" onclick="dec()">-</div>
+            <div class="counter" id="number">1</div>
+            <div class="plus" onclick="inc()">+</div>
+            <div class="red_btn" onclick=openCart(${id})><fmt:message
+                    key="add_to_cart_btn"/></div>
+            <div class="cancel" onclick="close_chooser()"><fmt:message key="cancel_btn"/></div>
+        </div>
+
+        <div id="text_buttons">
+            <div id="film-short-title" onClick="showMain()"><fmt:message key="main_info_btn"/></div>
+            <div id="film-long-title" onClick="showLong()"><fmt:message key="long_info_btn"/></div>
+            <div id="film-review-title" onClick="showReview()"><fmt:message key="review_btn"/></div>
         </div>
 
         <div id="film-short" style='display:none;'> ${movie.description} </div>
@@ -49,6 +53,7 @@
     </div>
 </div>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/page.js"></script>
 </body>
 </html>

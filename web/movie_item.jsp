@@ -27,7 +27,7 @@
     <div id="right">
         <h2 id="film-title" onclick='openMoviePage(${id})'>${movieLanguage.name}</h2>
         <div class="red_btn" id="buy${id}" onclick="open_chooser(${id})"><fmt:message key="buy_title_btn"/></div>
-        <div class="buttons" id="buy_buttons${id}">
+        <div class="buy_buttons" id="buy_buttons${id}">
             <div class="minus" onclick="dec(${id})">-</div>
             <div class="counter" id="number${id}">1</div>
             <div class="plus" onclick="inc(${id})">+</div>

@@ -24,6 +24,14 @@ public class HibernateUtils {
         return ourSessionFactory.openSession();
     }
 
+    public static Movie getMovie(String id) {
+        try {
+            return getMovie(Long.parseLong(id));
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
     public static Movie getMovie(long id) {
         try (Session session = getSession()) {
             return session.get(Movie.class, id);
