@@ -70,3 +70,54 @@
 #film-short {
     font-size: 20px;
 }
+
+#bottom {
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*color: white;*/
+    font-size: 21px;
+    padding-left: 16px;
+    height:60px;
+    font-family: "Roboto";
+    /*background: #d0723b;*/
+}
+
+#sum {
+    padding-right: 32px;
+}
+
+#film_poster:hover {
+    cursor: pointer;
+}
+
+#film-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#cart_buy_button {
+    background: #d0723b;
+    color: white;
+    margin: 10px;
+    padding: 5px 24px;
+}
+
+#amount {
+    display: flex;
+    flex-direction: row;
+}
+
+#cart_buy_button:hover {
+    cursor: pointer;
+    background: #b45a37;
+}

@@ -57,20 +57,11 @@
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>OrderPageServlet</servlet-class>
+        <servlet-class>LoginPageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>LoginError</servlet-name>
-        <servlet-class>OrderPageServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginError</servlet-name>
-        <url-pattern>/login-error</url-pattern>
     </servlet-mapping>
 
     <security-role>

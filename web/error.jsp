@@ -6,11 +6,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../styles/error.css">
+    <link rel="stylesheet" type="text/css" href="styles/error.css">
 </head>
 <body>
 
-<jsp:include page="../header.jsp"/>
+<jsp:include page="header.jsp"/>
 
 <fmt:setLocale value="${utils:getLocale(pageContext.request, pageContext.response)}"/>
 <fmt:setBundle basename="strings"/>

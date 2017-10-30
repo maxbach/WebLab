@@ -12,8 +12,10 @@
     <title><fmt:message key="cinema_name"/></title>
 </head>
 
-<body onload="onLoad()">
+<body>
+
 <jsp:include page="header.jsp"/>
+
 <c:forEach items="${sessionScope.cart.entrySet()}" var="pair">
     <c:set var="lang" value="${utils:getLanguageCookie(pageContext.request, pageContext.response)}"/>
     <c:set var="movie" value="${utils:getMovie(pair.getKey()).getMovieLanguage(lang)}"/>
@@ -36,9 +38,17 @@
     </div>
 </c:forEach>
 
-<div id="sum_block">
-    <fmt:message key="sum"/>
-    <div id="sum"></div>
+<div id="bottom">
+    <hr/>
+    <div id="footer">
+        <div id="amount">
+            <fmt:message key="sum"/>
+            <div id="sum"></div>
+        </div>
+        <div id="cart_buy_button" onclick="location.href ='order'">
+            <fmt:message key="buy"/>
+        </div>
+    </div>
 </div>
 
 <div id="numberOfTickets" style="display: none">${sessionScope.numberOfTickets}</div>

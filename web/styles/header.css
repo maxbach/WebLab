@@ -2,7 +2,7 @@
     margin: 0;
 }
 #header {
-    color: #ffffff;
+    color: white;
     background: #d0723b;
     display: flex;
     flex-direction: row;
@@ -12,6 +12,13 @@
 
 
 #open_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#header_signin {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -36,15 +43,19 @@ img {
     height: 26px;
 }
 
-#ru, #en, #fr {
+.header_language {
     padding: 20px;
 }
 
-#home, #login, #cart {
+.header_button {
     padding: 16px;
 }
 
-#ru:hover, #en:hover, #fr:hover, #home:hover, #login:hover, #cart:hover {
+.header_language:hover, .header_button:hover {
     background: #9bd753;
     cursor: pointer;
+}
+
+#login {
+    padding-left: 8px;
 }

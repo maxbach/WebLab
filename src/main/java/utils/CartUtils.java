@@ -45,8 +45,10 @@ public class CartUtils {
     }
 
     public static void updateValues(HttpSession session, String[] movieIds, String[] values) {
-        for (int i = 0; i < movieIds.length; i++) {
-            addTicketsToCart(session, Long.parseLong(movieIds[i]), Integer.parseInt(values[i]));
+        if (movieIds != null) {
+            for (int i = 0; i < movieIds.length; i++) {
+                addTicketsToCart(session, Long.parseLong(movieIds[i]), Integer.parseInt(values[i]));
+            }
         }
     }
 }

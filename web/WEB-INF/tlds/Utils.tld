@@ -49,11 +49,7 @@
         <function-class>utils.HibernateUtils</function-class>
         <function-signature>java.util.List getMoviesIds()</function-signature>
     </function>
-    <function>
-        <name>getCartSum</name>
-        <function-class>utils.CartUtils</function-class>
-        <function-signature>java.lang.Long getCountSum(javax.servlet.http.HttpSession)</function-signature>
-    </function>
+
     <function>
         <name>getCart</name>
         <function-class>utils.CartUtils</function-class>
@@ -64,6 +60,16 @@
         <function-class>utils.CartUtils</function-class>
         <function-signature>void addTicketsToCart(javax.servlet.http.HttpSession,java.lang.Long,java.lang.Integer)
         </function-signature>
+    </function>
+    <function>
+        <name>getCountSum</name>
+        <function-class>utils.CartUtils</function-class>
+        <function-signature>int getCountSum(javax.servlet.http.HttpSession)</function-signature>
+    </function>
+    <function>
+        <name>getUserName</name>
+        <function-class>utils.AuthUtils</function-class>
+        <function-signature>java.lang.String getUserName(javax.servlet.http.HttpServletRequest)</function-signature>
     </function>
 
 

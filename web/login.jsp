@@ -6,17 +6,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../styles/login.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
 </head>
 <body>
 
 <fmt:setLocale value="${utils:getLocale(pageContext.request, pageContext.response)}"/>
 <fmt:setBundle basename="strings"/>
 
+<jsp:include page="header.jsp"/>
+
 <form action="j_security_check" method="post" name="loginForm">
-    <label><fmt:message key="login"/></label><br>
-    <input type="text" name="j_username" placeholder="имя" size="20"/><br>
-    <label><fmt:message key="password"/></label><br>
+    <label><fmt:message key="login"/></label>
+    <input name="j_username" size="20"/><br>
+    <label><fmt:message key="password"/></label>
     <input type="password" name="j_password" size="20"/><br>
     <input type="submit" value="<fmt:message key="signin"/>"/>
 </form>

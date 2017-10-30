@@ -1,4 +1,4 @@
-function onLoad() {
+$(function() {
     var priceElement = $("#ticketPrice");
     var numberElement = $("#numberOfTickets");
 
@@ -14,28 +14,30 @@ function onLoad() {
     updatePrice();
     localStorage.clear();
 
-    $(window).bind('beforeunload', function() {
-        var keys = [];
-        var values = [];
 
-        for (var obj in localStorage) {
-            keys.push(obj);
-            values.push(localStorage.getItem(obj))
-        }
+});
 
-        keys = keys.slice(0, localStorage.length);
-        values = values.slice(0, localStorage.length);
+$(window).bind('beforeunload', function() {
+    var keys = [];
+    var values = [];
 
-        $.ajax({
-            url: 'cart',
-            type: 'POST',
-            dataType: "json",
-            async: false,
-            data: {"movieId": keys, "tickets": values}
-        });
+    for (var obj in localStorage) {
+        keys.push(obj);
+        values.push(localStorage.getItem(obj))
+    }
 
+    keys = keys.slice(0, localStorage.length);
+    values = values.slice(0, localStorage.length);
+
+    $.ajax({
+        url: 'cart',
+        type: 'POST',
+        dataType: "json",
+        async: false,
+        data: {"movieId": keys, "tickets": values}
     });
-}
+
+});
 
 function deleteMovie(id) {
     localStorage.removeItem(id);
@@ -89,5 +91,9 @@ function updatePrice() {
     var numberOfTickets = parseInt(sessionStorage.getItem("numberOfTickets"));
 
     $("#sum").text(ticketPrice * numberOfTickets);
+}
+
+function openMoviePage(id) {
+    location.href = "page?id=" + id;
 }
 
