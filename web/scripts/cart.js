@@ -5,6 +5,10 @@ $(function() {
     var ticketPrice = parseInt(priceElement.text());
     var numberOfTickets = parseInt(numberElement.text());
 
+    if (numberOfTickets === 0) {
+        $("#cart_buy_btn").remove()
+    }
+
     priceElement.remove();
     numberElement.remove();
 

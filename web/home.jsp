@@ -39,6 +39,7 @@
             %>
         </select>
     </div>
+    <div id="home_discount"><%=bundle.getString("discount")%></div>
 </div>
 <%
     List<Long> movieIds;

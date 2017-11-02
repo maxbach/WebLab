@@ -2,7 +2,7 @@ function changedSelector() {
     var e = document.getElementById("genre_selector");
     var genreId = e.options[e.selectedIndex].value;
     document.cookie = "genre = " + genreId;
-    location.reload()
+    location.href = "home?genre=" + genreId;
 }
 function openMoviePage(id) {
     location.href = "page?id=" + id;

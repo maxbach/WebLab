@@ -1,0 +1,45 @@
+.red_btn, .minus, .plus, .counter, .grey_btn {
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin: 8px
+}
+
+.red_btn {
+    background: #D0423B;
+    color: white;
+    margin-left: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.plus {
+    margin-right: 8px;
+}
+
+.red_btn:hover {
+    background: #871913;
+}
+
+.minus, .plus, .counter, .grey_btn {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #dcd9d3;
+}
+
+.minus:hover {
+    background: #d0723b;
+    color: white;
+}
+
+.plus:hover {
+    background: #2EA13C;
+    color: white;
+}
+
+.red_btn:hover, .minus:hover, .plus:hover, .grey_btn:hover {
+    cursor: pointer;
+}

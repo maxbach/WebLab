@@ -15,11 +15,13 @@
 
 <jsp:include page="header.jsp"/>
 
-<form action="j_security_check" method="post" name="loginForm">
-    <label><fmt:message key="login"/></label>
-    <input name="j_username" size="20"/><br>
-    <label><fmt:message key="password"/></label>
-    <input type="password" name="j_password" size="20"/><br>
-    <input type="submit" value="<fmt:message key="signin"/>"/>
-</form>
+<div id="login_body">
+    <form action="j_security_check" method="post" name="loginForm">
+        <label><fmt:message key="login"/></label><br>
+        <input name="j_username" size="20"/><br>
+        <label><fmt:message key="password"/></label><br>
+        <input type="password" name="j_password" size="20"/><br>
+        <input type="submit" value="<fmt:message key="signin"/>"/>
+    </form>
+</div>
 </body>

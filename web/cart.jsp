@@ -45,7 +45,7 @@
             <fmt:message key="sum"/>
             <div id="sum"></div>
         </div>
-        <div id="cart_buy_button" onclick="location.href ='order'">
+        <div class="red_btn" id="cart_buy_btn" onclick="location.href ='order'">
             <fmt:message key="buy"/>
         </div>
     </div>
