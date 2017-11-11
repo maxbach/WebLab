@@ -17,14 +17,6 @@
     align-items: flex-start;
 }
 
-.buy_buttons {
-    display: none;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    -webkit-user-select: none;
-}
-
 #film_poster {
     height: auto;
     width: 150px;

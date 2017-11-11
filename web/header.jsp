@@ -19,7 +19,11 @@
     <div id="open_buttons">
         <div class="header_button" onclick="location.href='home'"><img src="images/header_home.png"></div>
         <div class="header_button" onclick="location.href='cart'"><img src="images/header_cart.png"></div>
-        <div class="header_button" id="header_signin" onclick="location.href='user-profile'"><img src="images/header_login.png"><div id="login">${login}</div></div>
+        <div class="header_button" id="header_checkout" onclick="location.href='order'">
+            <img src="images/header_checkout.png">
+            <div id="tickets">${utils:getCountSum(pageContext.request)}</div>
+        </div>
+        <div class="header_button" id="header_signin" onclick="location.href='profile'"><img src="images/header_login.png"><div id="login">${login}</div></div>
         <div class="header_button" id="logout" style="display: none" onclick="logout()"><img src="images/header_exit.png"></div>
     </div>
 

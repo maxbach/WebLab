@@ -26,14 +26,14 @@
 
     <div id="right">
         <h2 id="film-title" onclick='openMoviePage(${id})'>${movieLanguage.name}</h2>
-        <div class="red_btn" id="buy${id}" onclick="open_chooser(${id})"><fmt:message key="buy_title_btn"/></div>
-        <div class="buy_buttons" id="buy_buttons${id}">
-            <div class="minus" onclick="dec(${id})">-</div>
-            <div class="counter" id="number${id}">1</div>
-            <div class="plus" onclick="inc(${id})">+</div>
-            <div class="red_btn" id="cart${id}" onclick=openCart(${id})><fmt:message
+        <div class="button red_btn" id="buy${id}" onclick="open_chooser(${id})"><fmt:message key="buy_title_btn"/></div>
+        <div class="buy_buttons" id="buy_buttons${id}" style="display: none">
+            <div class="button minus" onclick="dec(${id})">-</div>
+            <div class="button counter" id="number${id}">1</div>
+            <div class="button plus" onclick="inc(${id})">+</div>
+            <div class="button red_btn" id="cart${id}" onclick=openCart(${id})><fmt:message
                     key="add_to_cart_btn"/></div>
-            <div class="cancel" onclick="close_chooser(${id})"><fmt:message key="cancel_btn"/></div>
+            <div class="button grey_btn" onclick="close_chooser(${id})"><fmt:message key="cancel_btn"/></div>
         </div>
         <div id="film-short"> ${movieLanguage.description} </div>
     </div>

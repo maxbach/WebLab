@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Genre {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "genre_id", unique = true, nullable = false)
     private Long id;
     @Column(name = "name_ru")

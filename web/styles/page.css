@@ -15,39 +15,9 @@
     align-items: flex-start;
 }
 
-.buy_buttons, #text_buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    -webkit-user-select: none;
-}
-
 #film_poster {
     height: 768px;
     width: auto;
-}
-
-#film-long-title, #film-review-title, #film-short-title {
-    background: #add8e6;
-}
-
-#film-long-title:hover, #film-review-title:hover, #film-short-title:hover {
-    cursor: pointer;
-}
-
-#film-long-title, #film-review-title, #film-short-title, #buy-btn {
-    font-size: 16px;
-    height: 32px;
-    padding-left: 24px;
-    padding-right: 24px;
-    line-height: 32px;
-    text-align: center;
-    margin: 8px
-}
-
-#film-short-title {
-    margin-left: 0;
 }
 
 #film-short, #film-long, #film-review {

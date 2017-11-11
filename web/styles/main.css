@@ -1,17 +1,21 @@
-.red_btn, .minus, .plus, .counter, .grey_btn {
+.button {
     font-size: 16px;
     height: 32px;
     line-height: 32px;
     text-align: center;
-    margin: 8px
+    margin: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .red_btn {
     background: #D0423B;
     color: white;
     margin-left: 0;
-    padding-left: 24px;
-    padding-right: 24px;
+}
+
+.switch_button {
+    background: #add8e6;
 }
 
 .plus {
@@ -25,8 +29,6 @@
 .minus, .plus, .counter, .grey_btn {
     margin-left: 0;
     margin-right: 0;
-    padding-left: 16px;
-    padding-right: 16px;
     background: #dcd9d3;
 }
 
@@ -40,6 +42,48 @@
     color: white;
 }
 
-.red_btn:hover, .minus:hover, .plus:hover, .grey_btn:hover {
+.button:hover {
     cursor: pointer;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 21px;
+    padding-left: 16px;
+    height: 60px;
+}
+
+#sum {
+    padding-right: 32px;
+}
+
+#amount {
+    display: flex;
+    flex-direction: row;
+}
+
+.buy_buttons, .switcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-user-select: none;
+}
+
+td, th {
+    padding: 8px;
+}
+td {
+    text-align: center;
 }

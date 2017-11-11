@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import utils.CookieUtils;
 
 import javax.servlet.ServletException;
@@ -7,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class HomePageServlet extends HttpServlet {
+
+    final static Logger logger = Logger.getLogger(HomePageServlet.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=utf-8");
@@ -18,5 +22,6 @@ public class HomePageServlet extends HttpServlet {
         req.setAttribute("lang", lang);
         req.setAttribute("genre", genreId);
         req.getRequestDispatcher("home.jsp").forward(req, resp);
+        logger.debug("User opened home page");
     }
 }

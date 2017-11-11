@@ -64,13 +64,32 @@
     <function>
         <name>getCountSum</name>
         <function-class>utils.CartUtils</function-class>
-        <function-signature>int getCountSum(javax.servlet.http.HttpSession)</function-signature>
+        <function-signature>int getCountSum(javax.servlet.http.HttpServletRequest)</function-signature>
     </function>
     <function>
         <name>getUserName</name>
         <function-class>utils.AuthUtils</function-class>
         <function-signature>java.lang.String getUserName(javax.servlet.http.HttpServletRequest)</function-signature>
     </function>
-
+    <function>
+        <name>getCinemas</name>
+        <function-class>utils.HibernateUtils</function-class>
+        <function-signature>java.util.List getShops()</function-signature>
+    </function>
+    <function>
+        <name>getOrdersOfUser</name>
+        <function-class>utils.HibernateUtils</function-class>
+        <function-signature>java.util.List getOrdersOfUser(javax.servlet.http.HttpServletRequest)</function-signature>
+    </function>
+    <function>
+        <name>getDateForUser</name>
+        <function-class>utils.DateUtils</function-class>
+        <function-signature>java.lang.String getDateForUser(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>getComments</name>
+        <function-class>utils.HibernateUtils</function-class>
+        <function-signature>java.util.List getCommentOfUser(javax.servlet.http.HttpServletRequest)</function-signature>
+    </function>
 
 </taglib>

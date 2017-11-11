@@ -15,9 +15,9 @@
 <body>
 
 <jsp:include page="header.jsp"/>
+<c:set var="lang" value="${utils:getLanguageCookie(pageContext.request, pageContext.response)}"/>
 
 <c:forEach items="${sessionScope.cart.entrySet()}" var="pair">
-    <c:set var="lang" value="${utils:getLanguageCookie(pageContext.request, pageContext.response)}"/>
     <c:set var="movie" value="${utils:getMovie(pair.getKey()).getMovieLanguage(lang)}"/>
     <div id="body">
         <img id="film_poster" onclick='openMoviePage(${pair.getKey()})' src='images/posters/${pair.getKey()}.jpg'/>
@@ -26,11 +26,11 @@
             <h2 id="film-title" onclick='openMoviePage(${pair.getKey()})'>${movie.name}</h2>
             <div class="choose_buttons" id="buy_buttons${pair.getKey()}">
 
-                <div class="minus" onclick="dec(${pair.getKey()})">-</div>
-                <div class="counter" id="number${pair.getKey()}">${pair.getValue()}</div>
-                <div class="plus" onclick="inc(${pair.getKey()})">+</div>
+                <div class="button minus" onclick="dec(${pair.getKey()})">-</div>
+                <div class="button counter" id="number${pair.getKey()}">${pair.getValue()}</div>
+                <div class="button plus" onclick="inc(${pair.getKey()})">+</div>
 
-                <div class="red_btn" onclick="deleteMovie(${pair.getKey()})"><fmt:message key="delete"/></div>
+                <div class="button red_btn" onclick="deleteMovie(${pair.getKey()})"><fmt:message key="delete"/></div>
 
             </div>
             <div id="film-short"> ${movie.description} </div>
@@ -45,8 +45,8 @@
             <fmt:message key="sum"/>
             <div id="sum"></div>
         </div>
-        <div class="red_btn" id="cart_buy_btn" onclick="location.href ='order'">
-            <fmt:message key="buy"/>
+        <div class="button red_btn" id="cart_buy_btn" onclick="location.href ='order'">
+            <fmt:message key="checkout"/>
         </div>
     </div>
 </div>

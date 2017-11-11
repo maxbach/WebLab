@@ -1,4 +1,5 @@
 import Entities.Movie;
+import org.apache.log4j.Logger;
 import utils.CookieUtils;
 import utils.HibernateUtils;
 
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class MoviePageServlet extends HttpServlet {
 
     private String iniLineJavascript;
+    private final static Logger logger = Logger.getLogger(MoviePageServlet.class);
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -41,9 +43,8 @@ public class MoviePageServlet extends HttpServlet {
         req.setAttribute("movie", movie.getMovieLanguage(lang));
         req.setAttribute("initMethod", iniLineJavascript);
         req.setAttribute("lang", lang);
-        req.getRequestDispatcher("movie_page.jsp").forward(req, resp);
+        req.getRequestDispatcher("page.jsp").forward(req, resp);
+        logger.debug("User opened page of " + movie.getMovieLanguage("en").getName() + " movie at " + lang + " language");
     }
-
-
 
 }

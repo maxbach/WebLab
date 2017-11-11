@@ -9,17 +9,16 @@ import javax.persistence.*;
 public class MovieLanguage {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "movie_language_id")
     private long id;
     @Column(name = "movie_name")
     private String name;
-    @Column(name = "movie_description")
+    @Column(name = "movie_description", columnDefinition="TEXT")
     private String description;
-    @Column(name = "movie_info")
+    @Column(name = "movie_info", columnDefinition="TEXT")
     private String moreInfo;
-    @Column(name = "movie_reviews")
+    @Column(name = "movie_reviews", columnDefinition="TEXT")
     private String reviews;
 
     public MovieLanguage() {

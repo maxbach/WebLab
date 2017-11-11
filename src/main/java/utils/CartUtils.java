@@ -1,12 +1,22 @@
 package utils;
 
+import Entities.Order;
+import Entities.OrderDetail;
+import Entities.Shop;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
+import java.security.Principal;
+import java.sql.Date;
+import java.util.*;
 
 public class CartUtils {
 
     private static final Long ONE_TICKET = 5L;
+
+    public static int getCountSum(HttpServletRequest req) {
+        return getCountSum(req.getSession());
+    }
 
     public static int getCountSum(HttpSession session) {
         int count = 0;
@@ -50,5 +60,9 @@ public class CartUtils {
                 addTicketsToCart(session, Long.parseLong(movieIds[i]), Integer.parseInt(values[i]));
             }
         }
+    }
+
+    public static void cleanCart(HttpSession session) {
+        getCart(session).clear();
     }
 }

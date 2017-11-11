@@ -1,7 +1,5 @@
 package Entities;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,8 +7,7 @@ import javax.persistence.*;
 public class Movie {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "movie_id")
     private long id;
     @OneToOne
